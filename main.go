@@ -64,7 +64,8 @@ func main() {
 		port = strconv.Itoa(common.ServerPort)
 	}
 
-	common.SysLog("Server is running on port " + port)
+	// Log the full address for clarity when running locally
+	common.SysLog("Server is running on http://localhost:" + port)
 	err = server.Run(":" + port)
 	if err != nil {
 		common.FatalLog("Failed to start server: " + err.Error())
