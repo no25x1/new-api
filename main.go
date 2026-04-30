@@ -67,6 +67,7 @@ func main() {
 
 	// Log the full address for clarity when running locally
 	common.SysLog("Server is running on http://localhost:" + port)
+	common.SysLog("Tip: set GIN_MODE=debug in your .env file to enable verbose request logging")
 	err = server.Run(":" + port)
 	if err != nil {
 		common.FatalLog("Failed to start server: " + err.Error())
